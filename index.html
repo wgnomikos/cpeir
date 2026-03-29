@@ -3,171 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPEIR Workshop — Spring 2026</title>
+    <title>CPEIR Workshop — Spring 2026 | UC Santa Barbara</title>
+    <meta name="description" content="Comparative Political Economy & International Relations Workshop, Department of Political Science, UC Santa Barbara. Spring 2026 schedule.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --color-bg: #FAFAF8;
+            --color-text: #1a1a2e;
+            --color-text-secondary: #6b7280;
+            --color-accent: #003660;
+            --color-accent-light: #1a4f8a;
+            --color-divider: #e5e5e0;
+            --color-highlight: #f5f7fa;
+            --color-tbd: #9ca3af;
+            --font-heading: 'Source Serif 4', 'Georgia', serif;
+            --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+            --max-width: 680px;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: #333;
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 40px 24px 60px;
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background: var(--color-bg);
             line-height: 1.6;
-            background: #fafafa;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ---- Header ---- */
         header {
+            padding: 64px 0 48px;
             text-align: center;
-            margin-bottom: 36px;
-            padding-bottom: 24px;
-            border-bottom: 2px solid #003660;
         }
-        h1 {
-            font-size: 1.8em;
-            color: #003660;
-            margin-bottom: 4px;
-            font-variant: small-caps;
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            font-size: 1.05em;
-            color: #555;
-        }
-        .details {
-            margin-top: 12px;
-            font-size: 0.95em;
-            color: #666;
-        }
-        .details span {
-            display: inline-block;
-            margin: 0 8px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-        }
-        th {
-            text-align: left;
-            padding: 10px 12px;
-            border-bottom: 2px solid #003660;
-            color: #003660;
-            font-size: 0.9em;
+
+        .course-number {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2.5px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: var(--color-accent);
+            margin-bottom: 16px;
         }
-        td {
-            padding: 10px 12px;
-            border-bottom: 1px solid #ddd;
-            vertical-align: top;
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 700;
+            color: var(--color-text);
+            line-height: 1.2;
+            margin-bottom: 8px;
         }
-        tr:last-child td { border-bottom: none; }
-        .tbd { color: #999; font-style: italic; }
-        .special {
-            background: #f0f4f8;
+
+        .workshop-full-name {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
         }
-        .special td { font-style: italic; }
-        .note {
-            font-size: 0.85em;
-            color: #777;
+
+        .institution {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            margin-bottom: 28px;
         }
+
+        .meta {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .meta-icon {
+            width: 15px;
+            height: 15px;
+            opacity: 0.5;
+        }
+
+        .header-rule {
+            width: 48px;
+            height: 2px;
+            background: var(--color-accent);
+            margin: 40px auto 0;
+            border: none;
+        }
+
+        /* ---- Schedule ---- */
+        .schedule {
+            padding: 40px 0 48px;
+        }
+
+        .schedule-heading {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .session {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 0 20px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--color-divider);
+            align-items: baseline;
+        }
+
+        .session:last-child {
+            border-bottom: none;
+        }
+
+        .session-date {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--color-text-secondary);
+            white-space: nowrap;
+        }
+
+        .session-week {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--color-tbd);
+            margin-bottom: 2px;
+        }
+
+        .session-content {
+            min-width: 0;
+        }
+
+        .speaker-name {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .speaker-affiliation {
+            font-family: var(--font-body);
+            font-weight: 400;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .session-note {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 3px;
+            font-style: italic;
+        }
+
+        .session-tbd .speaker-name {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.9rem;
+            color: var(--color-tbd);
+            font-style: italic;
+        }
+
+        .session-special {
+            background: var(--color-highlight);
+            margin: 0 -16px;
+            padding: 16px 16px;
+            border-radius: 6px;
+            border-bottom: none;
+        }
+
+        .session-special + .session {
+            border-top: none;
+        }
+
+        .special-badge {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            background: rgba(0, 54, 96, 0.08);
+            padding: 2px 8px;
+            border-radius: 3px;
+            margin-bottom: 4px;
+        }
+
+        /* ---- Footer ---- */
         footer {
-            margin-top: 36px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-            color: #666;
+            padding: 32px 0 64px;
+            border-top: 1px solid var(--color-divider);
         }
-        footer a { color: #003660; }
-        @media (max-width: 480px) {
-            body { padding: 20px 16px 40px; }
-            h1 { font-size: 1.4em; }
-            td, th { padding: 8px 6px; font-size: 0.9em; }
+
+        .footer-content {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        footer a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        footer a:hover {
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* ---- Responsive ---- */
+        @media (max-width: 520px) {
+            header {
+                padding: 40px 0 32px;
+            }
+
+            .meta {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .session {
+                grid-template-columns: 1fr;
+                gap: 4px;
+                padding: 14px 0;
+            }
+
+            .session-date {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .session-week {
+                display: inline;
+                margin-bottom: 0;
+            }
+
+            .session-special {
+                margin: 0 -12px;
+                padding: 14px 12px;
+            }
+
+            footer {
+                padding: 24px 0 48px;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <p class="subtitle">POLS 594CP</p>
-        <h1>CPEIR Workshop</h1>
-        <p class="subtitle">Comparative Political Economy &amp; International Relations</p>
-        <p class="subtitle">Department of Political Science</p>
-        <p class="subtitle">UC Santa Barbara</p>
-        <div class="details">
-            <span>Spring 2026</span> &middot;
-            <span>Thursdays 12:30 &ndash; 1:30 PM</span> &middot;
-            <span>Ellison 3814</span>
-        </div>
-    </header>
+    <div class="container">
+        <header>
+            <p class="course-number">POLS 594CP</p>
+            <h1>CPEIR Workshop</h1>
+            <p class="workshop-full-name">Comparative Political Economy &amp; International Relations</p>
+            <p class="institution">Department of Political Science &middot; UC Santa Barbara</p>
+            <div class="meta">
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/></svg>
+                    Spring 2026
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/></svg>
+                    Thursdays, 12:30 &ndash; 1:30 PM
+                </span>
+                <span class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Ellison 3814
+                </span>
+            </div>
+            <hr class="header-rule">
+        </header>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Week</th>
-                <th>Date</th>
-                <th>Speaker</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Thu Apr 2</td>
-                <td class="tbd">TBD</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Thu Apr 9</td>
-                <td>Medha Monjaury (UCSB)</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Thu Apr 16</td>
-                <td>Natalia Bueno (Emory)</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>Thu Apr 23</td>
-                <td class="tbd">TBD</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>Thu Apr 30</td>
-                <td class="tbd">TBD</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>Thu May 7</td>
-                <td>Jakana Thomas (UCSD)</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Thu May 14</td>
-                <td class="tbd">TBD</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Thu May 21</td>
-                <td class="tbd">TBD</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Thu May 28</td>
-                <td>C&eacute;sar Mart&iacute;nez-&Aacute;lvarez (UCSB) &mdash; Book Workshop</td>
-            </tr>
-            <tr class="special">
-                <td>&mdash;</td>
-                <td>Wed Jun 3</td>
-                <td>Amanda Clayton (joint EPW/CPEIR) <span class="note">&mdash; 11:00 AM &ndash; 12:00 PM</span></td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>Thu Jun 4</td>
-                <td>Trevor Incerti (UVA Amsterdam)</td>
-            </tr>
-        </tbody>
-    </table>
+        <section class="schedule">
+            <h2 class="schedule-heading">Schedule</h2>
 
-    <footer>
-        <p>For questions or to join the mailing list, contact <a href="mailto:wnomikos@ucsb.edu">William G. Nomikos</a>.</p>
-    </footer>
+            <div class="session session-tbd">
+                <div class="session-date">
+                    <span class="session-week">Week 1</span>
+                    Thu, Apr 2
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">To be announced</span>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-date">
+                    <span class="session-week">Week 2</span>
+                    Thu, Apr 9
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">Medha Monjaury</span>
+                    <span class="speaker-affiliation">UC Santa Barbara</span>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-date">
+                    <span class="session-week">Week 3</span>
+                    Thu, Apr 16
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">Natalia Bueno</span>
+                    <span class="speaker-affiliation">Emory University</span>
+                </div>
+            </div>
+
+            <div class="session session-tbd">
+                <div class="session-date">
+                    <span class="session-week">Week 4</span>
+                    Thu, Apr 23
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">To be announced</span>
+                </div>
+            </div>
+
+            <div class="session session-tbd">
+                <div class="session-date">
+                    <span class="session-week">Week 5</span>
+                    Thu, Apr 30
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">To be announced</span>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-date">
+                    <span class="session-week">Week 6</span>
+                    Thu, May 7
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">Jakana Thomas</span>
+                    <span class="speaker-affiliation">UC San Diego</span>
+                </div>
+            </div>
+
+            <div class="session session-tbd">
+                <div class="session-date">
+                    <span class="session-week">Week 7</span>
+                    Thu, May 14
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">To be announced</span>
+                </div>
+            </div>
+
+            <div class="session session-tbd">
+                <div class="session-date">
+                    <span class="session-week">Week 8</span>
+                    Thu, May 21
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">To be announced</span>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-date">
+                    <span class="session-week">Week 9</span>
+                    Thu, May 28
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">C&eacute;sar Mart&iacute;nez-&Aacute;lvarez</span>
+                    <span class="speaker-affiliation">UC Santa Barbara</span>
+                    <p class="session-note">Book workshop</p>
+                </div>
+            </div>
+
+            <div class="session session-special">
+                <div class="session-date">
+                    <span class="session-week">Special</span>
+                    Wed, Jun 3
+                </div>
+                <div class="session-content">
+                    <span class="special-badge">Joint EPW / CPEIR</span>
+                    <span class="speaker-name">Amanda Clayton</span>
+                    <span class="speaker-affiliation">UC Berkeley</span>
+                    <p class="session-note">11:00 AM &ndash; 12:00 PM</p>
+                </div>
+            </div>
+
+            <div class="session">
+                <div class="session-date">
+                    <span class="session-week">Week 10</span>
+                    Thu, Jun 4
+                </div>
+                <div class="session-content">
+                    <span class="speaker-name">Trevor Incerti</span>
+                    <span class="speaker-affiliation">University of Amsterdam</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p class="footer-content">
+                For questions or to join the mailing list, contact <a href="mailto:wnomikos@ucsb.edu">William G. Nomikos</a>.
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
